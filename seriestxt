@@ -1,0 +1,40 @@
+#print('用一维数组生成Series')
+#x = Series([1,2,3,4])
+#print(x)
+#'''
+#0    1
+#1    2
+#2    3
+#3    4
+#'''
+#print(x.values) # [1 2 3 4]
+# 默认标签为0到3的序号
+#print(x.index) # RangeIndex(start=0, stop=4, step=1)
+
+'''
+print ('指定Series的index') # 可将index理解为行索引
+x = Series([1, 2, 3, 4], index = ['a', 'b', 'd', 'c'])
+print (x)
+'''
+a    1
+b    2
+d    3
+c    4
+'''
+print (x.index) # Index([u'a', u'b', u'd', u'c'], dtype='object')
+print (x['a']) # 通过行索引来取得元素值：1
+x['d'] = 6 # 通过行索引来赋值
+print (x[['c', 'a', 'd']]) # 类似于numpy的花式索引
+'''
+c    4
+a    1
+d    6
+'''
+print (x[x > 2])  # 类似于numpy的布尔索引
+'''
+d    6
+c    4
+'''
+print ('b' in x) # 类似于字典的使用：是否存在该索引：True
+print ('e' in x) # False
+'''
